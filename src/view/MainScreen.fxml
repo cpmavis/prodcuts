@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <BorderPane prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Label text="Inventory Management System" BorderPane.alignment="TOP_CENTER">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <Button fx:id="MainScreenExitButton" mnemonicParsing="false" text="Exit" BorderPane.alignment="CENTER_RIGHT">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </bottom>
+         <left>
+            <VBox prefHeight="711.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Parts">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Region>
+                        <TextField fx:id="MainScreenPartsSearch" promptText="Search by ID or Number" />
+                        <Button fx:id="partSearchButton" mnemonicParsing="false" text="Search">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="partRefreshButton" layoutX="564.0" layoutY="30.0" mnemonicParsing="false" text="Clear">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <TableView fx:id="partTableView" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="partIDColumn" prefWidth="150.0" text="Part ID" />
+                      <TableColumn fx:id="partNameColumn" prefWidth="150.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryColumn" prefWidth="150.0" text="Inventory Level" />
+                        <TableColumn fx:id="partCostColumn" prefWidth="150.0" text="Price/Cost per Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Button fx:id="MainScreenPartsAddButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="MainScreenPartsModifyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Modify">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="MainScreenPartsDeleteButton" layoutX="32.0" layoutY="10.0" mnemonicParsing="false" text="Delete">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="711.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Products">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </Region>
+                        <TextField fx:id="MainScreenProductsSearch" promptText="Search by ID or Number" />
+                        <Button fx:id="productSearchButton" mnemonicParsing="false" text="Search">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="productRefreshButton" layoutX="564.0" layoutY="30.0" mnemonicParsing="false" text="Clear">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <TableView fx:id="productTableView" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="productIDColumn" prefWidth="150.0" text="Part ID" />
+                        <TableColumn fx:id="productNameColumn" prefWidth="150.0" text="Part Name" />
+                        <TableColumn fx:id="productInventoryColumn" prefWidth="150.0" text="Inventory Level" />
+                        <TableColumn fx:id="productCostColumn" prefWidth="150.0" text="Price/Cost per Unit" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Button fx:id="MainScreenProductsAddButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="MainScreenProductsModifyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Modify">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="MainScreenProductsDeleteButton" layoutX="32.0" layoutY="10.0" mnemonicParsing="false" text="Delete">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
